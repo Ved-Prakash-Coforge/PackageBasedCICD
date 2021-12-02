@@ -47,9 +47,8 @@ jobs:
       run: sfdx force:package:version:create --package DeveloperLWCComponent --path force-app --installationkey test1234 --wait 10 --targetdevhubusername vprakash28jan89@gmail.com.new
    
     # Install package version to developer org
-    - name: Install package version to qa
+    - name: Install package version to developer org
       run: |
-          PACKAGE_ID=$(sfdx force:package:version:list -p 'DeveloperLWCComponent' -o CreatedDate --concise -v DevHub | tail -1 | awk '{print $3}')
+          PACKAGE_ID=$(sfdx force:package:version:list -p 'DeveloperLWCComponent' -o CreatedDate --concise -v vprakash28jan89@gmail.com.new | tail -1 | awk '{print $3}')
           echo $PACKAGE_ID > PACKAGE_ID
-          PACKAGE_KEY=$(cat package-key.txt)
           sfdx force:package:install -p $PACKAGE_ID -k test1234 -u prod -w 15
