@@ -1,0 +1,19 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "DeveloperLWCComponent",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT"
+        }
+    ],
+    "name": "PackageBasedCICD",
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "DeveloperLWCComponent": "0Ho7F000000CahtSAC",
+        "DeveloperLWCComponent@0.1.0-1": "04t7F000005VH6DQAW"
+    }
+}

@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Show/Search Records" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={data}>
+                <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search"
+                value={searchKey}></lightning-input>
+                <div align="right" > 
+                    <lightning-button title="Delete" label="Delete" size="small" variant="brand" 
+                                    icon-position="right" onclick={deletedSelectedRecords}></lightning-button>
+                </div>
+                <lightning-datatable
+                        key-field="id"
+                        data={data}
+                        columns={columns}
+                        sorted-by={sortedBy}
+                        sorted-direction={sortedDirection} 
+                        onsort={sortColumns}
+                        onrowselection={getSelectedRows}>
+                </lightning-datatable>  
+            </br>
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    Page {page} of {totalPage}
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right"
+                        onclick={nextHandler}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            </template>
+        </div>
+    </lightning-card>
+</template>
